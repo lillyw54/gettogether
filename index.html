@@ -1,50 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Get togetHER</title>
-    <style>
-        /* CSS styles for the navigation bar */
-        nav {
-            background-color: rgb(75, 122, 96);
-            color: #fff;
-            padding: 30px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <style>
+    /* CSS styles for the navigation bar */
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        nav ul li {
-            float: left;
-        }
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
 
-        nav ul li a {
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+    }
 
-        nav ul li a:hover {
-            background-color: #111;
-        }
-    </style>
+    /* CSS styles for the blog post content */
+    .blog-post {
+      margin: 20px;
+    }
+
+    .blog-post h1 {
+      font-size: 24px;
+    }
+
+    .blog-post p {
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Home/AboutUS/missionstatement</a></li>
-            <li><a href="#">Job Listings</a></li>
-            <li><a href="#">dead link*blogpost*</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Events</a></li>
-        </ul>
-    </nav>
-    <h1>Welcome to our Landing Page!</h1>
-    <p>This is the content of the landing page.</p>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="job-listings.html">Job Listings</a></li>
+    </ul>
+  </nav>
+
+  <div class="blog-post">
+    <h1>Sample Blog Post</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lectus euismod, pretium velit id, varius sem. Integer nec ex id lectus bibendum vehicula. Nullam id nisl vel arcu aliquam ultrices. Fusce ut turpis ac ex fringilla eleifend. Praesent pellentesque, eros eu sagittis lacinia, est sem lacinia ex, eu aliquam turpis metus vitae risus. Sed nec orci ut neque aliquam finibus. Sed ut velit eleifend, placerat nisl non, auctor lectus. Sed id tincidunt urna. Sed finibus, dolor id lacinia efficitur, est ligula finibus odio, nec gravida massa sem eget risus. Phasellus ut ligula id sem ornare iaculis. Mauris euismod, ex eu luctus fermentum, nunc arcu vehicula velit, nec gravida massa nisl vitae sem.</p>
+  </div>
+
+  <script>
+    // JavaScript code for handling tab functionality
+    const tabs = document.querySelectorAll('nav ul li a');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = e.target.getAttribute('href');
+        document.querySelector('.blog-post').style.display = 'none';
+        document.querySelector(target).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
