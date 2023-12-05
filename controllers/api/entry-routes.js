@@ -2,9 +2,10 @@ const router = require('express').Router();
 const entry = require('../../models/jobopenings');
 
 router.post('/', async (req, res) => {
+  
   try { 
     const jobOpening = await entry.create({
-    title: req.body.blog_title,
+    title: req.body.job_title,
     description: req.body.comment,
     contact: req.body.guest
   });

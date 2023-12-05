@@ -1,3 +1,4 @@
 const User = require('./users');
+const JobOpenings = require('./jobopenings');
 
-module.exports = { User };
+module.exports = { User, JobOpenings };
