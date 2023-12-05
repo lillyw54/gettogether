@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     description: req.body.comment,
     contact: req.body.guest
   });
-  res.status(200).json(blogData)
+  res.status(200).json(jobOpening)
 } catch (err) {
   res.status(400).json(err);
 }
