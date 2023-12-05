@@ -2,11 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class JobOpenings extends Model {
-  checkPassword(loginPw) {
+class JobOpenings extends Model { 
+    checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+  }}
 
 JobOpenings.init(
     {
@@ -30,9 +29,6 @@ JobOpenings.init(
       },
     },
     {
-      hooks: {
-        // You can add hooks if needed
-      },
       sequelize,
       timestamps: false,
       freezeTableName: true,
