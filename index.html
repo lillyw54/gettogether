@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
+  <link rel="stylesheet" href="./public/css/style.css">
+  <title>Get TogetHER</title>
   <style>
     /* CSS styles for the navigation bar */
     nav {
@@ -11,39 +12,63 @@
       color: #fff;
       padding: 10px;
     }
-
     nav ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      text-align: center; /* Center the navbar tabs */
     }
-
     nav ul li {
       display: inline-block;
       margin-right: 10px;
     }
-
     nav ul li a {
       color: #fff;
       text-decoration: none;
       padding: 5px;
     }
-
     /* CSS styles for the blog post content */
     .blog-post {
       margin: 20px;
     }
-
     .blog-post h1 {
       font-size: 24px;
     }
-
     .blog-post p {
       font-size: 16px;
+    }
+    /* CSS styles for the login box */
+    .login-box {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .login-box .field {
+      margin-right: 10px;
     }
   </style>
 </head>
 <body>
+  <div class="login-box">
+    <form class="box" onsubmit="resetForm()">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="e.g. alex@example.com" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" type="password" placeholder="********" required>
+        </div>
+      </div>
+      <button class="button is-primary">Sign in</button>
+    </form>
+  </div>
+
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -51,6 +76,20 @@
       <li><a href="job-listings.html">Job Listings</a></li>
     </ul>
   </nav>
+
+  <div class="navbar">
+    <div id="Home">
+       
+      <!-- Content for Home tab -->
+    </div>
+    <div id="Blog">
+      <!-- Content for Blog -->
+      <li><a href="job-listings.html">Job Listings</a></li>
+    </div>
+    <div id="Job Openings">
+      <!-- Content for Tab 3 -->
+    </div>
+  </div>
 
   <div class="blog-post">
     <h1>Sample Blog Post</h1>
@@ -60,7 +99,6 @@
   <script>
     // JavaScript code for handling tab functionality
     const tabs = document.querySelectorAll('nav ul li a');
-
     tabs.forEach(tab => {
       tab.addEventListener('click', (e) => {
         e.preventDefault();
