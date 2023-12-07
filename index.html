@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     .title {
       text-align: center;
@@ -19,7 +20,6 @@
       </div>
     </div>
   </header>
-
   <section class="section">
     <div class="container">
       <div class="columns">
@@ -27,12 +27,39 @@
           <img src="images/together.jpg" alt="Image">
         </div>
         <div class="column">
-          <textarea class="textarea" placeholder="Enter your text here"></textarea>
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                </p>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                  </a>
+                  <a class="level-item" onclick="toggleLike()">
+                    <span class="icon is-small" id="likeIcon"><i class="far fa-heart"></i></span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div class="media-right">
+              <button class="delete"></button>
+            </div>
+          </article>
         </div>
       </div>
     </div>
   </section>
-
   <section class="section">
     <div class="container">
       <div class="columns">
@@ -75,5 +102,27 @@
       </div>
     </div>
   </section>
+
+  <script>
+    let isLiked = false;
+    let likeCount = 0;
+
+    function toggleLike() {
+      const likeIcon = document.getElementById("likeIcon");
+
+      if (isLiked) {
+        likeIcon.classList.remove("fas");
+        likeIcon.classList.add("far");
+        likeCount--;
+      } else {
+        likeIcon.classList.remove("far");
+        likeIcon.classList.add("fas");
+        likeCount++;
+      }
+
+      document.getElementById("likeCount").textContent = likeCount;
+      isLiked = !isLiked;
+    }
+  </script>
 </body>
 </html>
