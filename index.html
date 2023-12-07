@@ -1,112 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./public/css/style.css">
-  <title>Get TogetHER</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <style>
-    /* CSS styles for the navigation bar */
-    nav {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-    }
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      text-align: center; /* Center the navbar tabs */
-    }
-    nav ul li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 5px;
-    }
-    /* CSS styles for the blog post content */
-    .blog-post {
-      margin: 20px;
-    }
-    .blog-post h1 {
+    .title {
+      text-align: center;
       font-size: 24px;
-    }
-    .blog-post p {
-      font-size: 16px;
-    }
-    /* CSS styles for the login box */
-    .login-box {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      align-items: center;
-    }
-    .login-box .field {
-      margin-right: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="login-box">
-    <form class="box" onsubmit="resetForm()">
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input class="input" type="email" placeholder="e.g. alex@example.com" required>
+  <header class="hero is-primary is-bold" style="height: 150px;">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Get TogetHER
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <img src="images/together.jpg" alt="Image">
+        </div>
+        <div class="column">
+          <textarea class="textarea" placeholder="Enter your text here"></textarea>
         </div>
       </div>
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-          <input class="input" type="password" placeholder="********" required>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Card 1
+              </p>
+              <p class="subtitle">
+                Card 1 subtitle
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Card 2
+              </p>
+              <p class="subtitle">
+                Card 2 subtitle
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Card 3
+              </p>
+              <p class="subtitle">
+                Card 3 subtitle
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <button class="button is-primary">Sign in</button>
-    </form>
-  </div>
-
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="job-listings.html">Job Listings</a></li>
-    </ul>
-  </nav>
-
-  <div class="navbar">
-    <div id="Home">
-       
-      <!-- Content for Home tab -->
     </div>
-    <div id="Blog">
-      <!-- Content for Blog -->
-      <li><a href="job-listings.html">Job Listings</a></li>
-    </div>
-    <div id="Job Openings">
-      <!-- Content for Tab 3 -->
-    </div>
-  </div>
-
-  <div class="blog-post">
-    <h1>Sample Blog Post</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lectus euismod, pretium velit id, varius sem. Integer nec ex id lectus bibendum vehicula. Nullam id nisl vel arcu aliquam ultrices. Fusce ut turpis ac ex fringilla eleifend. Praesent pellentesque, eros eu sagittis lacinia, est sem lacinia ex, eu aliquam turpis metus vitae risus. Sed nec orci ut neque aliquam finibus. Sed ut velit eleifend, placerat nisl non, auctor lectus. Sed id tincidunt urna. Sed finibus, dolor id lacinia efficitur, est ligula finibus odio, nec gravida massa sem eget risus. Phasellus ut ligula id sem ornare iaculis. Mauris euismod, ex eu luctus fermentum, nunc arcu vehicula velit, nec gravida massa nisl vitae sem.</p>
-  </div>
-
-  <script>
-    // JavaScript code for handling tab functionality
-    const tabs = document.querySelectorAll('nav ul li a');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = e.target.getAttribute('href');
-        document.querySelector('.blog-post').style.display = 'none';
-        document.querySelector(target).style.display = 'block';
-      });
-    });
-  </script>
+  </section>
 </body>
 </html>
