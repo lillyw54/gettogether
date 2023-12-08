@@ -18,6 +18,20 @@
     .signin-input {
       margin-right: 10px;
     }
+
+    .horizontal-cards {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .horizontal-card {
+      width: 30%;
+    }
+
+    .media-content {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 
@@ -50,18 +64,11 @@
         </div>
         <div class="column">
           <article class="media" id="originalMedia">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </figure>
-
-            <!-- Inserted code here -->
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong contenteditable="true" id="nameInput">John Smith</strong>
-                  <small>@johnsmith</small>
+                  <strong contenteditable="true" id="nameInput">Tess Jansen</strong>
+                  <small>@TessTheBoss</small>
                   <small>31m</small>
                   <br>
                   <textarea contenteditable="true" id="postInput" rows="4" cols="50">Hey girls, I am looking for a software developer to create a website! please reach out to 956-732-3664 for more information. </textarea>
@@ -71,7 +78,7 @@
               <nav class="level is-mobile">
                 <div class="level-left">
                   <a class="level-item">
-                    <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                    <span class="icon is-small"><i class="fas fa-reply"></i></span
                   </a>
                   <a class="level-item" onclick="toggleLike()">
                     <span class="icon is-small" id="likeIcon"><i class="far fa-heart"></i></span>
@@ -84,17 +91,62 @@
                 <button class="button is-danger" onclick="deletePost()">Delete</button>
               </div>
             </div>
-            <div class="media-right">
-              <button class="delete"></button>
-            </div>
-            <!-- End of inserted code -->
           </article>
           <div class="cloned-media"></div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Remaining sections... -->
+  <section class="section">
+    <div class="container">
+      <div class="horizontal-cards">
+        <div class="horizontal-card">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Mission Statement
+              </p>
+              <p class="subtitle">
+                Establish an inclusive online platform dedicated to fostering opportunities for growth and empowerment.
+                A place where it will serve as an open forum, specifically tailored to curate and showcase job openings and
+                internship opportunities for small businesses owned by women.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="horizontal-card">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Github
+              </p>
+              <p class="subtitle">
+                <a href="https://github.com/lillyw54/gettogether">https://github.com/lillyw54/gettogether</a>
+                <a href="https://github.com/lillyw54">https://github.com/lillyw54</a>
+                <a href="https://github.com/tjansen34">https://github.com/tjansen34</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="horizontal-card">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                About Us
+              </p>
+              <p class="subtitle">
+                 Our endeavor involves the establishment of a platform where
+                 women can exchange their successes and contributions. This online space
+                 is dedicated to fostering an environment where women feel valued, empowered, and at ease
+                 while showcasing and promoting their professional achievements and narratives related to their
+                 experiences in the workforce.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <script>
     let isLiked = false;
     let likeCount = 0;
