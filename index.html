@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -8,15 +9,50 @@
       text-align: center;
       font-size: 24px;
     }
+
+    .signin-form {
+      display: flex;
+      align-items: center;
+    }
+
+    .signin-input {
+      margin-right: 10px;
+    }
+
+    .horizontal-cards {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .horizontal-card {
+      width: 30%;
+    }
+
+    .media-content {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
+
 <body>
   <header class="hero is-primary is-bold" style="height: 150px;">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-          Get TogetHER
-        </h1>
+        <div class="columns is-vcentered">
+          <div class="column">
+            <h1 class="title">
+              Get TogetHER
+            </h1>
+          </div>
+          <div class="column is-narrow">
+            <div class="signin-form">
+              <input class="input signin-input" type="email" placeholder="Email">
+              <input class="input signin-input" type="password" placeholder="Password">
+              <button class="button is-info" onclick="signIn()">Sign In</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -27,91 +63,82 @@
           <img src="images/together.jpg" alt="Image">
         </div>
         <div class="column">
-          <article class="media">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </figure>
-<div class="media">
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong contenteditable="true" id="nameInput">John Smith</strong>
-        <small>@johnsmith</small>
-        <small>31m</small>
-        <br>
-        <textarea contenteditable="true" id="postInput" rows="4" cols="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</textarea>
-      </p>
-    </div>
-    <div id="likeCount">0</div>
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-reply"></i></span>
-        </a>
-        <a class="level-item" onclick="toggleLike()">
-          <span class="icon is-small" id="likeIcon"><i class="far fa-heart"></i></span>
-        </a>
-      </div>
-    </nav>
-    <div class="buttons">
-      <button class="button is-primary" onclick="editText()">Edit</button>
-      <button class="button is-success" onclick="saveText()">Save</button>
-      <button class="button is-danger" onclick="deletePost()">Delete</button>
-    </div>
-  </div>
-  <div class="media-right">
-    <button class="delete"></button>
-  </div>
-</div>
+          <article class="media" id="originalMedia">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong contenteditable="true" id="nameInput">Tess Jansen</strong>
+                  <small>@TessTheBoss</small>
+                  <small>31m</small>
+                  <br>
+                  <textarea contenteditable="true" id="postInput" rows="4" cols="50">Hey girls, I am looking for a software developer to create a website! please reach out to 956-732-3664 for more information. </textarea>
+                </p>
+              </div>
+              <div id="likeCount">0</div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-reply"></i></span
+                  </a>
+                  <a class="level-item" onclick="toggleLike()">
+                    <span class="icon is-small" id="likeIcon"><i class="far fa-heart"></i></span>
+                  </a>
+                </div>
+              </nav>
+              <div class="buttons">
+                <button class="button is-primary" onclick="editText()">Edit</button>
+                <button class="button is-success" onclick="saveText()">Save</button>
+                <button class="button is-danger" onclick="deletePost()">Delete</button>
+              </div>
+            </div>
           </article>
+          <div class="cloned-media"></div>
         </div>
       </div>
     </div>
   </section>
   <section class="section">
     <div class="container">
-      <div class="columns">
-        <div class="column">
+      <div class="horizontal-cards">
+        <div class="horizontal-card">
           <div class="card">
             <div class="card-content">
               <p class="title">
                 Mission Statement
               </p>
               <p class="subtitle">
-                Establish an inclusive online platform dedicated to fostering opportunities for growth and empowerment. 
-                A place where it will serve as an open forum, specifically tailored to curate and showcase job openings and 
+                Establish an inclusive online platform dedicated to fostering opportunities for growth and empowerment.
+                A place where it will serve as an open forum, specifically tailored to curate and showcase job openings and
                 internship opportunities for small businesses owned by women.
               </p>
             </div>
           </div>
         </div>
-        <div class="column">
+        <div class="horizontal-card">
           <div class="card">
             <div class="card-content">
               <p class="title">
                 Github
               </p>
               <p class="subtitle">
-                <li> https://github.com/lillyw54/gettogether </li>
-                <li> https://github.com/lillyw54 </li>
-                <li> https://github.com/tjansen34 </li>
+                <a href="https://github.com/lillyw54/gettogether">https://github.com/lillyw54/gettogether</a>
+                <a href="https://github.com/lillyw54">https://github.com/lillyw54</a>
+                <a href="https://github.com/tjansen34">https://github.com/tjansen34</a>
               </p>
             </div>
           </div>
         </div>
-        <div class="column">
+        <div class="horizontal-card">
           <div class="card">
             <div class="card-content">
               <p class="title">
                 About Us
               </p>
               <p class="subtitle">
-                 Our endeavor involve the establishment of a platform where 
-                 women can exchange their successes and contributions. This online space 
-                 is dedicated to fostering an environment where women feel valued, empowered, and at ease 
-                 while showcasing and promoting their professional achievements and narratives related to their 
+                 Our endeavor involves the establishment of a platform where
+                 women can exchange their successes and contributions. This online space
+                 is dedicated to fostering an environment where women feel valued, empowered, and at ease
+                 while showcasing and promoting their professional achievements and narratives related to their
                  experiences in the workforce.
               </p>
             </div>
@@ -141,39 +168,32 @@
 
       document.getElementById("likeCount").textContent = likeCount;
       isLiked = !isLiked;
-  }
+    }
 
- // Function to toggle the like button and update the like count
-function toggleLike() {
-  var likeIcon = $("#likeIcon");
-  var likeCount = $("#likeCount");
-  
-  if (likeIcon.hasClass("far")) {
-    likeIcon.removeClass("far").addClass("fas");
-    likeCount.text(parseInt(likeCount.text()) + 1);
-  } else {
-    likeIcon.removeClass("fas").addClass("far");
-    likeCount.text(parseInt(likeCount.text()) - 1);
-  }
-}
+    function editText() {
+      nameInput.contentEditable = true;
+      postInput.contentEditable = true;
+    }
 
-// Function to enable editing of the post content
-function editText() {
-  $("#nameInput").attr("contenteditable", "true");
-  $("#postInput").attr("contenteditable", "true");
-}
+    function saveText() {
+      // Clone the original media element and append it to the container
+      const originalMedia = document.getElementById("originalMedia");
+      const clonedMedia = originalMedia.cloneNode(true);
+      document.querySelector(".cloned-media").appendChild(clonedMedia);
+    }
 
-// Function to save the edited post content
-function saveText() {
-  $("#nameInput").attr("contenteditable", "false");
-  $("#postInput").attr("contenteditable", "false");
-}
+    function deletePost() {
+      const mediaElements = document.querySelectorAll(".media");
+      mediaElements.forEach((mediaElement) => {
+        mediaElement.remove();
+      });
+    }
 
-// Function to delete the post
-function deletePost() {
-  $(".media").remove();
-}
-
-</script>
+    function signIn() {
+      // Implement your sign-in logic here
+      alert("Sign-in functionality will be implemented here.");
+    }
+  </script>
 </body>
+
 </html>
